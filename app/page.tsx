@@ -1,10 +1,11 @@
 import Image from "next/image";
+import Link from "next/link";
 import styles from "./page.module.css";
 
 export default function Home() {
   return (
     <div className={styles.page}>
-      <main className={styles.main}>
+      {/* <main className={styles.main}>
         <Image
           className={styles.logo}
           src="/next.svg"
@@ -89,7 +90,73 @@ export default function Home() {
           />
           Go to nextjs.org →
         </a>
-      </footer>
+      </footer> */}
+      <div>사이트명은 뭘로해야하죠</div>
+      <div>
+        <a
+          href={`https://notion.so/2584ec1ca6d080509599d0542bc2d48f?source=copy_link`}
+          target="_blank"
+        >
+          프로젝트 노션 바로가기
+        </a>
+      </div>
+      <div>
+        <div>사이트 메인 캡쳐본</div>
+
+        <ul>
+          <li>
+            <div></div>
+            <a href=""></a>
+            <div>
+              {/* <Image
+                className={styles.logo}
+                src="/images/coinsect.io_.png"
+                alt="Next.js logo"
+                width={1000}
+                height={-1}
+                priority
+              /> */}
+            </div>
+          </li>
+          <li>
+            <div></div>
+            <a href=""></a>
+            <div>
+              {/* <Image
+                className={styles.logo}
+                src="/images/explus.co.kr_.png"
+                alt="Next.js logo"
+                width={1000}
+                height={-1}
+                priority
+              /> */}
+            </div>
+          </li>
+          <li>
+            <div></div>
+            <a href=""></a>
+            <div>
+              {/* <Image
+                className={styles.logo}
+                src="/images/kimpga.com_.png"
+                alt="Next.js logo"
+                width={1000}
+                height={-1}
+                priority
+              /> */}
+            </div>
+          </li>
+          <li>
+            <div></div>
+          </li>
+          <li>
+            <div></div>
+          </li>
+          <li>
+            <div></div>
+          </li>
+        </ul>
+      </div>
     </div>
   );
 }
