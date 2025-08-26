@@ -100,63 +100,8 @@ export default function Home() {
           프로젝트 노션 바로가기
         </a>
       </div>
-      <div>
-        <div>사이트 메인 캡쳐본</div>
-
-        <ul>
-          <li>
-            <div></div>
-            <a href=""></a>
-            <div>
-              {/* <Image
-                className={styles.logo}
-                src="/images/coinsect.io_.png"
-                alt="Next.js logo"
-                width={1000}
-                height={-1}
-                priority
-              /> */}
-            </div>
-          </li>
-          <li>
-            <div></div>
-            <a href=""></a>
-            <div>
-              {/* <Image
-                className={styles.logo}
-                src="/images/explus.co.kr_.png"
-                alt="Next.js logo"
-                width={1000}
-                height={-1}
-                priority
-              /> */}
-            </div>
-          </li>
-          <li>
-            <div></div>
-            <a href=""></a>
-            <div>
-              {/* <Image
-                className={styles.logo}
-                src="/images/kimpga.com_.png"
-                alt="Next.js logo"
-                width={1000}
-                height={-1}
-                priority
-              /> */}
-            </div>
-          </li>
-          <li>
-            <div></div>
-          </li>
-          <li>
-            <div></div>
-          </li>
-          <li>
-            <div></div>
-          </li>
-        </ul>
-      </div>
+      <div></div>
+      <Link href={"/testguide"}>테스트가이드</Link>
     </div>
   );
 }
