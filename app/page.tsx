@@ -62,7 +62,7 @@ export default function ChatPage() {
             setMessages((currentMessages) => [...currentMessages, payload.new]);
           }
         )
-        .subscribe(); // 구독 시작
+        .subscribe();
 
       return () => {
         // 컴포넌트 언마운트 시 구독 해제
