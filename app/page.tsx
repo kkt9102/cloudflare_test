@@ -1,25 +1,3 @@
-// import Image from "next/image";
-// import Link from "next/link";
-// import styles from "./page.module.css";
-
-// export default function Home() {
-//   return (
-//     <div className={styles.page}>
-//       <div>사이트명은 뭘로해야하죠</div>
-//       <div>
-//         <a
-//           href={`https://notion.so/2584ec1ca6d080509599d0542bc2d48f?source=copy_link`}
-//           target="_blank"
-//         >
-//           프로젝트 노션 바로가기
-//         </a>
-//       </div>
-//       <div></div>
-//       <Link href={"/testguide"}>테스트가이드</Link>
-//     </div>
-//   );
-// }
-// app/page.tsx 또는 다른 클라이언트 컴포넌트 파일
 "use client";
 
 export const runtime = "edge";
@@ -121,3 +99,26 @@ export default function ChatPage() {
     </div>
   );
 }
+
+// import Image from "next/image";
+// import Link from "next/link";
+// import styles from "./page.module.css";
+
+// export default function Home() {
+//   return (
+//     <div className={styles.page}>
+//       <div>사이트명은 뭘로해야하죠</div>
+//       <div>
+//         <a
+//           href={`https://notion.so/2584ec1ca6d080509599d0542bc2d48f?source=copy_link`}
+//           target="_blank"
+//         >
+//           프로젝트 노션 바로가기
+//         </a>
+//       </div>
+//       <div></div>
+//       <Link href={"/testguide"}>테스트가이드</Link>
+//     </div>
+//   );
+// }
+// app/page.tsx 또는 다른 클라이언트 컴포넌트 파일
