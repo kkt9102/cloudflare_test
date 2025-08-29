@@ -1,7 +1,6 @@
-import { createServerClient } from "../../lib/supabase"; // 서버용 클라이언트 임포트
+import { supabase } from "../../lib/supabase"; // 서버용 클라이언트 임포트
 
 export default async function Page() {
-  const supabase = createServerClient();
   const { data: messages, error } = await supabase.from("message").select("*");
 
   if (error) {

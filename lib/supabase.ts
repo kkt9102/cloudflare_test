@@ -1,17 +1,12 @@
-// lib/supabase.server.ts (예시)
+// lib/supabase.ts
 import { createClient } from "@supabase/supabase-js";
-// import { cookies } from "next/headers";
 
-// 서버 컴포넌트에서 사용될 Supabase 클라이언트
-// 서버 컴포넌트는 next/headers의 cookies()를 사용하여
-// 서버에서만 접근 가능한 요청 헤더를 가져올 수 있습니다.
-export const createServerClient = () => {
-  const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL!;
-  const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!;
+const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
+const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
 
-  return createClient(supabaseUrl, supabaseAnonKey, {
-    auth: {
-      flowType: "pkce",
-    },
-  });
-};
+if (!supabaseUrl || !supabaseAnonKey) {
+  throw new Error("Supabase URL or anonymous key not found.");
+}
+
+// 클라이언트 컴포넌트용 클라이언트 인스턴스를 생성하여 export합니다.
+export const supabase = createClient(supabaseUrl, supabaseAnonKey);
