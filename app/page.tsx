@@ -21,7 +21,15 @@
 //   );
 // }
 // app/page.tsx 또는 다른 클라이언트 컴포넌트 파일
+
 export const runtime = "edge";
+
+interface Message {
+  id: string; // 또는 number, bigint 등 실제 타입에 맞게
+  content: string;
+  uuid_id: string;
+  created_at: string;
+}
 
 import { useState, useEffect } from "react";
 import { createServerClient } from "../lib/supabase";
@@ -29,7 +37,7 @@ import { createServerClient } from "../lib/supabase";
 export default function ChatPage() {
   const supabase = createServerClient();
   // 메시지 목록을 저장할 상태
-  const [messages, setMessages] = useState<any[]>([]);
+  const [messages, setMessages] = useState<Message[]>([]);
   // 메시지 입력 상태
   const [newMessageContent, setNewMessageContent] = useState("");
 
@@ -60,7 +68,10 @@ export default function ChatPage() {
           (payload) => {
             // 새로운 메시지가 추가되면 실행될 콜백 함수
             // payload.new에 새 메시지 데이터가 들어있음
-            setMessages((currentMessages) => [...currentMessages, payload.new]);
+            setMessages((currentMessages: any) => [
+              ...currentMessages,
+              payload.new,
+            ]);
           }
         )
         .subscribe();
@@ -98,9 +109,7 @@ export default function ChatPage() {
       <div>
         {/* 메시지 목록 렌더링 */}
         {messages.map((msg) => (
-          <div key={msg.id || msg.uuid_id}>
-            {msg.content} || {msg.created_at}
-          </div>
+          <div key={msg.id || msg.uuid_id}>{msg.content}</div>
         ))}
       </div>
       <div>
