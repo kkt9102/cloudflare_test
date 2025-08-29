@@ -1,3 +1,4 @@
+"use client";
 // import Image from "next/image";
 // import Link from "next/link";
 // import styles from "./page.module.css";
@@ -21,7 +22,6 @@
 // }
 // app/page.tsx 또는 다른 클라이언트 컴포넌트 파일
 export const runtime = "edge";
-("use client"); // <-- 이 지시어를 반드시 추가해야 합니다.
 
 import { useState, useEffect } from "react";
 import { createServerClient } from "../lib/supabase";
