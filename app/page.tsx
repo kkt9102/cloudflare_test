@@ -98,7 +98,9 @@ export default function ChatPage() {
       <div>
         {/* 메시지 목록 렌더링 */}
         {messages.map((msg) => (
-          <div key={msg.id || msg.uuid_id}>{msg.content}</div>
+          <div key={msg.id || msg.uuid_id}>
+            {msg.content} || {msg.created_at}
+          </div>
         ))}
       </div>
       <div>

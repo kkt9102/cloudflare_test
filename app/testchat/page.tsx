@@ -14,7 +14,9 @@ export default async function Page() {
       <h1>Messages (From Server Component)</h1>
       <ul>
         {messages?.map((message) => (
-          <li key={message.uuid_id}>{message.content}</li>
+          <li key={message.uuid_id}>
+            {message.content} | {message.created_at}
+          </li>
         ))}
       </ul>
     </div>
