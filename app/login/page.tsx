@@ -10,7 +10,7 @@ export default function LoginPage() {
 
   const handleLogin = async () => {
     // const res = await fetch("http://localhost:3005/auth/login", {
-    const res = await fetch("https://ktkim9102.com:3307/auth/login", {
+    const res = await fetch("/api/auth/login", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ userId: loginId, password: loginPw }),
