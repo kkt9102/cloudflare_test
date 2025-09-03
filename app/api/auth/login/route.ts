@@ -1,3 +1,4 @@
+export const runtime = "edge";
 import { NextResponse } from "next/server";
 
 export async function POST(request: Request) {
@@ -16,13 +17,15 @@ export async function POST(request: Request) {
     if (!res.ok) {
       // 백엔드에서 받은 에러 응답을 그대로 전달합니다.
       const errorData = await res.text();
-      console.error('Backend Error:', errorData);
-      return new NextResponse(errorData, { status: res.status, statusText: res.statusText });
+      console.error("Backend Error:", errorData);
+      return new NextResponse(errorData, {
+        status: res.status,
+        statusText: res.statusText,
+      });
     }
 
     const data = await res.json();
     return NextResponse.json(data);
-
   } catch (error) {
     console.error("Error in API route:", error);
     return new NextResponse("Internal Server Error", { status: 500 });
