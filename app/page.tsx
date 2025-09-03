@@ -63,7 +63,9 @@ export default function ChatPage() {
     if (newMessageContent.trim() === "") return;
 
     // UUID를 하드코딩된 테스트 값으로 설정
-    const testUuid = "980be7f9-d7c1-4701-8225-5edaf529dbc5";
+    const testUuid =
+      localStorage.getItem("user_uuid") ||
+      "980be7f9-d7c1-4701-8225-5edaf529dbc5";
 
     const { error } = await supabase.from("message").insert({
       content: newMessageContent,
