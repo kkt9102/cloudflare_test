@@ -9,7 +9,7 @@ export async function POST(request: Request) {
       ? "http://localhost:3005/auth/login"
       : "https://ktkim9102.com:3307/auth/login";
 
-    const res = await fetch(baseUrl, {
+    const res = await fetch("https://ktkim9102.com:3307/auth/login", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
