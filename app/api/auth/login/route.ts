@@ -5,8 +5,11 @@ export async function POST(request: Request) {
   try {
     const body = await request.json();
     const { userId, password } = body;
+    const baseUrl = process.env.NODE_ENV
+      ? "http://localhost:3005/auth/login"
+      : "https://ktkim9102.com:3307/auth/login";
 
-    const res = await fetch("https://ktkim9102.com:3307/auth/login", {
+    const res = await fetch(baseUrl, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

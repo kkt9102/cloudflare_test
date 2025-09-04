@@ -26,6 +26,7 @@ export default function LoginPage() {
     const data = await res.json();
     if (data.user.uuid) {
       localStorage.setItem("user_uuid", data.user.uuid);
+      localStorage.setItem("nickname", data.user.nickname);
       router.push("/");
     } else {
       console.error("UUID not found in login response");

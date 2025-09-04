@@ -10,6 +10,7 @@ interface Message {
   id: string; // 또는 number, bigint 등 실제 타입에 맞게
   content: string;
   uuid_id: string;
+  nickname: string;
   created_at: string;
 }
 
@@ -67,9 +68,12 @@ export default function ChatPage() {
       localStorage.getItem("user_uuid") ||
       "980be7f9-d7c1-4701-8225-5edaf529dbc5";
 
+    const userNIckname =
+      localStorage.getItem("nickname") || "넥네임 로컬스톨지에 없음";
     const { error } = await supabase.from("message").insert({
       content: newMessageContent,
       uuid_id: testUuid,
+      nickname: userNIckname,
     });
 
     if (error) {
@@ -85,7 +89,7 @@ export default function ChatPage() {
       <div>
         {messages.map((msg) => (
           <div key={msg.id}>
-            <strong>{msg.uuid_id}:</strong> {msg.content}
+            <strong>{msg.nickname}:</strong> {msg.content}
           </div>
         ))}
       </div>
